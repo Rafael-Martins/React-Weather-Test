@@ -1,0 +1,32 @@
+@import "scss/colors"; // Colors sheet
+@import "../node_modules/jam-icons/css/jam.min.css"; // Icons
+
+$text-size-title: 46px;
+
+.app-container {
+  background-image: linear-gradient($bg-gradient-1, $bg-gradient-2);
+  height: 100vh;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-title {
+  color: $text-white;
+  font-size: $text-size-title;
+  margin-top: 50px;
+}
+
+.app-searchbox {
+  margin-top: 35px;
+}
+
+.app-separator {
+  width: 500px;
+  margin-top: 35px;
+}
+
+.separator {
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+}
