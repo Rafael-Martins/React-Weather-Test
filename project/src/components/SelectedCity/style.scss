@@ -1,0 +1,26 @@
+@import "../../scss/colors";
+
+.selectedcity-container {
+  background-color: #fff;
+  width: 400px;
+  height: 250px;
+  padding: 10px 10px 10px 40px;
+}
+
+.close-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: $icons-color;
+}
+
+.selectedcity-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.current-condition {
+  font-size: 40px;
+  font-weight: bold;
+}

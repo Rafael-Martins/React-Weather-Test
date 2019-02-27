@@ -10,7 +10,17 @@
 }
 
 .capitalstable-tables {
-  margin-top: 10px;
+  margin-top: 1px;
   display: flex;
   justify-content: space-between;
+}
+
+.temp-table {
+  border-spacing: 5px 20px;
+}
+
+.temp-table thead {
+}
+
+.temp-table tr {
 }

@@ -4,6 +4,7 @@ import "./App.scss";
 //Components
 import SearchBox from "./components/SearchBox";
 import CapitalsTable from "./components/CapitalsTable";
+import SelectedCity from "./components/SelectedCity";
 
 //Api HTTP-Service
 import { GET_FORECAST_RSS } from "./services/apiService";
@@ -29,12 +30,24 @@ class App extends Component {
     });
   };
 
+  searchCity = searchText => {
+    GET_FORECAST_RSS(searchText).then(response => {
+      console.log(response);
+      this.setState({ selectedCity: response });
+    });
+  };
+
+  closeCity = () => {
+    this.setState({ selectedCity: "" });
+  };
+
   componentDidMount() {
     this.getForecasts();
   }
 
   state = {
-    cityTemps: []
+    cityTemps: [],
+    selectedCity: ""
   };
 
   render() {
@@ -43,8 +56,19 @@ class App extends Component {
         <div className="app-container">
           <div className="app-title">Previsao do tempo</div>
 
+          {this.state.selectedCity !== "" ? (
+            <div className="app-selectedcity">
+              <SelectedCity
+                city={this.state.selectedCity}
+                close={this.closeCity}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
           <div className="app-searchbox">
-            <SearchBox />
+            <SearchBox goSearch={this.searchCity} />
           </div>
 
           <div className="app-separator">

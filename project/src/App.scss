@@ -5,9 +5,8 @@ $text-size-title: 46px;
 
 .app-container {
   background-image: linear-gradient($bg-gradient-1, $bg-gradient-2);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  // justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -19,7 +18,11 @@ $text-size-title: 46px;
 }
 
 .app-searchbox {
-  margin-top: 35px;
+  margin-top: 20px;
+}
+
+.app-selectedcity {
+  margin-top: 20px;
 }
 
 .app-separator {

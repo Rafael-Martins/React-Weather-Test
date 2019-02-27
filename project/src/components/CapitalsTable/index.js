@@ -24,14 +24,14 @@ const TempTable = ({ temps, range }) => {
   };
 
   return (
-    <table>
-      <tbody>
+    <table className="temp-table">
+      <thead>
         <tr>
           <th>Min</th>
           <th>Max</th>
         </tr>
-        {values()}
-      </tbody>
+      </thead>
+      <tbody>{values()}</tbody>
     </table>
   );
 };
