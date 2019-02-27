@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.scss";
 
-class SeacrhBox extends Component {
+class SearchBox extends Component {
   render() {
     return (
       <div className="search-input-container">
@@ -17,4 +17,4 @@ class SeacrhBox extends Component {
   }
 }
 
-export default SeacrhBox;
+export default SearchBox;

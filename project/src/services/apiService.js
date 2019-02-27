@@ -20,16 +20,20 @@ const oauth = OAuth({
 
 const GET_FORECAST_RSS = location => {
   const request_data = {
-    url: `https://weather-ydn-yql.media.yahoo.com/forecastrss?location=${location}&format=json`,
+    url: `https://weather-ydn-yql.media.yahoo.com/forecastrss?location=${location}&format=json&u=c`,
     method: "get"
   };
 
-  return axios.get(request_data.url, {
-    headers: {
-      ...oauth.toHeader(oauth.authorize(request_data)),
-      "Yahoo-App-Id": "9WTQzP5c"
-    }
-  });
+  return axios
+    .get(request_data.url, {
+      headers: {
+        ...oauth.toHeader(oauth.authorize(request_data)),
+        "Yahoo-App-Id": "9WTQzP5c"
+      }
+    })
+    .then(res => {
+      return res.data;
+    });
 };
 
 export { GET_FORECAST_RSS };

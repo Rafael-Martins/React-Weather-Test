@@ -1,0 +1,16 @@
+@import "../../scss/colors";
+
+.capitalstable-container {
+  width: 400px;
+}
+
+.capitalstable-title {
+  color: $text-white;
+  font-size: 30px;
+}
+
+.capitalstable-tables {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
