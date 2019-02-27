@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./style.scss";
 
 const TempTable = ({ temps, range }) => {
@@ -55,5 +56,9 @@ class CapitalsTable extends Component {
     );
   }
 }
+
+CapitalsTable.propTypes = {
+  cityTemps: PropTypes.array.isRequired
+};
 
 export default CapitalsTable;

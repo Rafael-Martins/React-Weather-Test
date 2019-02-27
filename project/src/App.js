@@ -32,7 +32,6 @@ class App extends Component {
 
   searchCity = searchText => {
     GET_FORECAST_RSS(searchText).then(response => {
-      console.log(response);
       this.setState({ selectedCity: response });
     });
   };

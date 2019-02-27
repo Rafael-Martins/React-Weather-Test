@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./style.scss";
 
 class SearchBox extends Component {
@@ -33,5 +34,9 @@ class SearchBox extends Component {
     );
   }
 }
+
+SearchBox.propTypes = {
+  goSearch: PropTypes.func.isRequired
+};
 
 export default SearchBox;

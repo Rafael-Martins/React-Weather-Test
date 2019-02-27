@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./style.scss";
 
 const forecastsDays = city => {
@@ -6,7 +7,7 @@ const forecastsDays = city => {
   city.forecasts.forEach((forecast, index) => {
     if (index < 6 && index > 0) {
       days.push(
-        <div className="day-forecast">
+        <div className="day-forecast" key={index}>
           <span className="day-name">{forecast.day}</span>
           <span className="day-temp">
             {forecast.low}° {forecast.high}°
@@ -67,7 +68,6 @@ class SelectedCity extends Component {
       city.current_observation.condition.temperature
     }C° ${city.current_observation.condition.text}`;
 
-    console.log(city);
     return (
       <div className="selectedcity-container">
         <div className="selectedcity-head">
@@ -93,5 +93,10 @@ class SelectedCity extends Component {
     );
   }
 }
+
+SelectedCity.propTypes = {
+  city: PropTypes.object.isRequired,
+  close: PropTypes.func.isRequired
+};
 
 export default SelectedCity;
