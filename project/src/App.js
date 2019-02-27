@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-container">
-          <div className="app-title">Previsao do tempo</div>
+          <div className="app-title">Previsão do tempo</div>
 
           {this.state.selectedCity !== "" ? (
             <div className="app-selectedcity">

@@ -20,7 +20,7 @@ const oauth = OAuth({
 
 const GET_FORECAST_RSS = location => {
   const request_data = {
-    url: `https://weather-ydn-yql.media.yahoo.com/forecastrss?location=${location}&format=json&u=c`,
+    url: `https://weather-ydn-yql.media.yahoo.com/forecastrss?location=${location}&format=json&u=c&language=pt-br`,
     method: "get"
   };
 

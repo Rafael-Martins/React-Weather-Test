@@ -1,7 +1,8 @@
+@import "scss/fonts"; // Fonts
 @import "scss/colors"; // Colors sheet
 @import "../node_modules/jam-icons/css/jam.min.css"; // Icons
 
-$text-size-title: 46px;
+$text-size-title: 43px;
 
 .app-container {
   background-image: linear-gradient($bg-gradient-1, $bg-gradient-2);
@@ -15,6 +16,8 @@ $text-size-title: 46px;
   color: $text-white;
   font-size: $text-size-title;
   margin-top: 50px;
+  font-family: $open-sans;
+  font-weight: 700;
 }
 
 .app-searchbox {
@@ -35,5 +38,8 @@ $text-size-title: 46px;
 }
 
 .separator {
-  border: 1px rgba(255, 255, 255, 0.5) solid;
+  height: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
 }
