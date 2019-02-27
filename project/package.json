@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
     "jam-icons": "^2.0.0",
     "node-sass": "^4.11.0",
+    "oauth-1.0a": "^2.2.5",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
