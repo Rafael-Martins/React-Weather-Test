@@ -36,7 +36,7 @@ class App extends Component {
         Object.keys(response.location).length === 0 ||
         Object.keys(response.forecasts).length === 0
       ) {
-        this.setState({ cityNotFound: true });
+        this.setState({ cityNotFound: true, selectedCity: "" });
         return;
       }
 
