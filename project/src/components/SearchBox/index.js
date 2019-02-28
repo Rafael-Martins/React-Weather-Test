@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./style.scss";
 
 class SearchBox extends Component {
-
   inputPressEnter = event => {
     if (event.charCode === 13) {
       this.callSearch();
@@ -11,7 +10,17 @@ class SearchBox extends Component {
   };
 
   callSearch = () => {
-    this.props.goSearch(this.searchInput.current.value);
+    if (this.state.searchInput !== "") {
+      this.props.goSearch(this.state.searchInput);
+    }
+  };
+
+  changeSearch = event => {
+    this.setState({ searchInput: event.target.value });
+  };
+
+  state = {
+    searchInput: ""
   };
 
   render() {
@@ -21,9 +30,9 @@ class SearchBox extends Component {
           className="search-input"
           placeholder="Insira aqui o nome da cidade"
           onKeyPress={this.inputPressEnter}
-          ref={this.searchInput}
+          onChange={this.changeSearch}
         />
-        <div className="icon-container" onClick={this.callSearch}>
+        <div className="search-icon-container" onClick={this.callSearch}>
           <span className="jam jam-search search-icon" />
         </div>
       </div>
