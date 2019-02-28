@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 import "./style.scss";
 
 class SearchBox extends Component {
-  constructor(props) {
-    super(props);
-    this.searchInput = React.createRef();
-  }
 
   inputPressEnter = event => {
     if (event.charCode === 13) {

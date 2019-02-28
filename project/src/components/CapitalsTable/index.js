@@ -12,7 +12,7 @@ const TempTable = ({ temps, range }) => {
         if (range[0] <= index && range[1] >= index) {
           // check if is in range (for divide into 2 collumns)
           trArray.push(
-            <tr key={index}>
+            <tr key={index} id={`temp-table`}>
               <td>{temp.min}°</td>
               <td>{temp.max}°</td>
               <td>{temp.name}</td>

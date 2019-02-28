@@ -54,10 +54,6 @@ const thermalSensation = city => {
 };
 
 class SelectedCity extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
-
   render() {
     const city = this.props.city;
 
