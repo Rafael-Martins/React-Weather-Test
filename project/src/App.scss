@@ -43,3 +43,18 @@ $text-size-title: 43px;
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
 }
+
+.search-error {
+  color: $text-error;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-width: 0px 1px 1px 1px;
+  border-radius: 0px 0px 6px 6px;
+  border-style: solid;
+  border-color: grey;
+  padding: 2px 35px 4px 35px;
+}
+
+.search-error-container {
+  display: flex;
+  justify-content: center;
+}

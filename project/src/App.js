@@ -32,7 +32,15 @@ class App extends Component {
 
   searchCity = searchText => {
     GET_FORECAST_RSS(searchText).then(response => {
-      this.setState({ selectedCity: response });
+      if (
+        Object.keys(response.location).length === 0 ||
+        Object.keys(response.forecasts).length === 0
+      ) {
+        this.setState({ cityNotFound: true });
+        return;
+      }
+
+      this.setState({ selectedCity: response, cityNotFound: false });
     });
   };
 
@@ -46,7 +54,8 @@ class App extends Component {
 
   state = {
     cityTemps: [],
-    selectedCity: ""
+    selectedCity: "",
+    cityNotFound: false
   };
 
   render() {
@@ -68,6 +77,13 @@ class App extends Component {
 
           <div className="app-searchbox">
             <SearchBox goSearch={this.searchCity} />
+            <div className="search-error-container">
+              {this.state.cityNotFound ? (
+                <span className="search-error">Cidade não encontrada</span>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
 
           <div className="app-separator">
