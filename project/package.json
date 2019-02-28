@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "crypto": "^1.0.1",
+    "enzyme": "^3.9.0",
     "jam-icons": "^2.0.0",
     "node-sass": "^4.11.0",
     "oauth-1.0a": "^2.2.5",
@@ -27,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "enzyme-adapter-react-16": "^1.10.0"
+  }
 }
