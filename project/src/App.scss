@@ -1,8 +1,7 @@
 @import "scss/fonts"; // Fonts
 @import "scss/colors"; // Colors sheet
+@import "scss/sizes"; // Sizes
 @import "../node_modules/jam-icons/css/jam.min.css"; // Icons
-
-$text-size-title: 43px;
 
 .app-container {
   background-image: linear-gradient($bg-gradient-1, $bg-gradient-2);
@@ -18,10 +17,19 @@ $text-size-title: 43px;
   margin-top: 50px;
   font-family: $open-sans;
   font-weight: 700;
+
+  @media screen and (max-width: $break-small) {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
 }
 
 .app-searchbox {
   margin-top: 20px;
+
+  @media screen and (max-width: $break-small) {
+    max-width: 270px;
+  }
 }
 
 .app-selectedcity {
@@ -42,6 +50,10 @@ $text-size-title: 43px;
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
+
+  @media screen and (max-width: $break-small) {
+    height: 1px;
+  }
 }
 
 .search-error {

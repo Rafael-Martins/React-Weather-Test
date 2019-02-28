@@ -1,8 +1,14 @@
 @import "../../scss/colors";
 @import "../../scss/fonts";
+@import "../../scss/sizes";
 
 .capitalstable-container {
   width: 400px;
+
+  @media screen and (max-width: $break-small) {
+    width: 100%;
+    margin-right: 70px;
+  }
 }
 
 .capitalstable-title {
@@ -16,6 +22,10 @@
   margin-top: 1px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: $break-small) {
+    flex-direction: column;
+  }
 }
 
 .temp-table {

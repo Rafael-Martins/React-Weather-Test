@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
 
+const isMobile = window.innerWidth < 480;
+
 const TempTable = ({ temps, range }) => {
   const values = () => {
     let trArray = [];
@@ -45,12 +47,18 @@ class CapitalsTable extends Component {
 
         <div className="capitalstable-tables">
           <div className="tables-table-1">
-            {TempTable({ temps: this.props.cityTemps, range: [0, 4] })}
+            {isMobile
+              ? TempTable({ temps: this.props.cityTemps, range: [0, 10] })
+              : TempTable({ temps: this.props.cityTemps, range: [0, 4] })}
           </div>
 
-          <div className="tables-table-2">
-            {TempTable({ temps: this.props.cityTemps, range: [5, 10] })}
-          </div>
+          {!isMobile ? (
+            <div className="tables-table-2">
+              {TempTable({ temps: this.props.cityTemps, range: [5, 10] })}
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );
