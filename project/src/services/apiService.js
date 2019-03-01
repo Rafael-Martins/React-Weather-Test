@@ -2,10 +2,10 @@ import axios from "axios";
 import crypto from "crypto";
 import OAuth from "oauth-1.0a";
 
-function hash_function_sha1(base_string, key) {
+function hashFunctionSha1(baseString, key) {
   return crypto
     .createHmac("sha1", key)
-    .update(base_string)
+    .update(baseString)
     .digest("base64");
 }
 
@@ -15,19 +15,19 @@ const oauth = OAuth({
     secret: "8c248f9488e193311ef5d89ff6f05fe020e3e031"
   },
   signature_method: "HMAC-SHA1",
-  hash_function: hash_function_sha1
+  hash_function: hashFunctionSha1
 });
 
-const GET_FORECAST_RSS = location => {
-  const request_data = {
+const getForecastRss = location => {
+  const requestData = {
     url: `https://weather-ydn-yql.media.yahoo.com/forecastrss?location=${location}&format=json&u=c&language=pt-br`,
     method: "get"
   };
 
   return axios
-    .get(request_data.url, {
+    .get(requestData.url, {
       headers: {
-        ...oauth.toHeader(oauth.authorize(request_data)),
+        ...oauth.toHeader(oauth.authorize(requestData)),
         "Yahoo-App-Id": "9WTQzP5c"
       }
     })
@@ -36,4 +36,4 @@ const GET_FORECAST_RSS = location => {
     });
 };
 
-export { GET_FORECAST_RSS };
+export { getForecastRss };

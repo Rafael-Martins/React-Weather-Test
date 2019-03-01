@@ -3,11 +3,11 @@ import "./App.scss";
 
 //Components
 import SearchBox from "./components/SearchBox";
-import CapitalsTable from "./components/CapitalsTable";
+import CapitalsTables from "./components/CapitalsTables";
 import SelectedCity from "./components/SelectedCity";
 
 //Api HTTP-Service
-import { GET_FORECAST_RSS } from "./services/apiService";
+import { getForecastRss } from "./services/apiService";
 
 //Constants
 import cities from "./constants/cities";
@@ -15,7 +15,7 @@ import cities from "./constants/cities";
 class App extends Component {
   getForecasts = () => {
     cities.forEach(value => {
-      GET_FORECAST_RSS(value).then(res => {
+      getForecastRss(value).then(res => {
         this.setState({
           cityTemps: [
             ...this.state.cityTemps,
@@ -31,7 +31,7 @@ class App extends Component {
   };
 
   searchCity = searchText => {
-    GET_FORECAST_RSS(searchText).then(response => {
+    getForecastRss(searchText).then(response => {
       if (
         Object.keys(response.location).length === 0 ||
         Object.keys(response.forecasts).length === 0
@@ -90,8 +90,8 @@ class App extends Component {
             <hr className="separator" />
           </div>
 
-          <div className="app-capitalstable">
-            <CapitalsTable cityTemps={this.state.cityTemps} />
+          <div className="app-capitalstables">
+            <CapitalsTables cityTemps={this.state.cityTemps} />
           </div>
         </div>
       </div>

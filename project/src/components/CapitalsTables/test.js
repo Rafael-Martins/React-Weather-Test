@@ -33,8 +33,8 @@ describe("Basic tests", () => {
     const tablesTable = wrapper.find(".tables-table-1 #temp-table");
     const tablesTable2 = wrapper.find(".tables-table-2 #temp-table");
 
-    expect(tablesTable.length).toBe(0);
-    expect(tablesTable2.length).toBe(0);
+    expect(tablesTable.length).toBe(1);
+    expect(tablesTable2.length).toBe(1);
   });
 
   it("should render with tenCityArray", () => {
@@ -42,7 +42,7 @@ describe("Basic tests", () => {
     const tablesTable = wrapper.find(".tables-table-1 #temp-table");
     const tablesTable2 = wrapper.find(".tables-table-2 #temp-table");
 
-    expect(tablesTable.length).toBe(5);
-    expect(tablesTable2.length).toBe(5);
+    expect(tablesTable.length).toBe(1);
+    expect(tablesTable2.length).toBe(1);
   });
 });

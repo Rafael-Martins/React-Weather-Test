@@ -33,33 +33,6 @@
   margin-left: 30px;
 }
 
-.sensation-line {
-  display: flex;
-  margin-top: 20px;
-  font-family: $open-sans;
-  margin-left: 30px;
-}
-
-.sensation-icon {
-  color: $icons-color;
-  font-size: 25px;
-  margin-right: -5px;
-}
-
-.sensation-item {
-  font-weight: 300;
-  margin-right: 20px;
-  min-width: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.sensation-result {
-  font-weight: bold;
-  color: $text-black;
-  margin-left: 5px;
-}
-
 .separator--orange {
   height: 1px;
   color: $icons-color;
