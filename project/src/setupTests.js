@@ -8,4 +8,15 @@ const localStorageMock = {
   setItem: jest.fn(),
   clear: jest.fn()
 };
+
+window.matchMedia = jest.fn().mockImplementation(query => {
+  return {
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn()
+  };
+});
+
 global.localStorage = localStorageMock;

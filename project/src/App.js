@@ -61,11 +61,11 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="app-container">
+        <div className="app__container">
           <div className="app-title">Previsão do tempo</div>
 
           {this.state.selectedCity !== "" ? (
-            <div className="app-selectedcity">
+            <div className="app-selectedcity__container">
               <SelectedCity
                 city={this.state.selectedCity}
                 close={this.closeCity}
@@ -75,9 +75,9 @@ class App extends Component {
             ""
           )}
 
-          <div className="app-searchbox">
+          <div className="app-searchbox__container">
             <SearchBox goSearch={this.searchCity} />
-            <div className="search-error-container">
+            <div className="search-error__container">
               {this.state.cityNotFound ? (
                 <span className="search-error">Cidade não encontrada</span>
               ) : (
@@ -86,11 +86,11 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="app-separator">
+          <div className="app-separator__container">
             <hr className="separator" />
           </div>
 
-          <div className="app-capitalstables">
+          <div className="app-capitalstables__container">
             <CapitalsTables cityTemps={this.state.cityTemps} />
           </div>
         </div>

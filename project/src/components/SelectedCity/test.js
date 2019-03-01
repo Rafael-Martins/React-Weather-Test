@@ -35,7 +35,7 @@ describe("Basic tests", () => {
   it("should call close function on press", () => {
     const addMock = jest.fn(() => {});
     const wrapper = shallow(<Index close={addMock} city={city} />);
-    const closeIcon = wrapper.find(".close-icon");
+    const closeIcon = wrapper.find(".close-button");
 
     closeIcon.simulate("click");
 

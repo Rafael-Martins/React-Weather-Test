@@ -1,9 +1,8 @@
 import React from "react";
 import CapitalsTableItem from "../CapitalsTableItem";
+import useMedia from "../../hooks/useMedia";
 import PropTypes from "prop-types";
 import "./style.scss";
-
-const isMobile = window.innerWidth < 480;
 
 const TempTable = ({ temps, range }) => {
   return (
@@ -22,12 +21,14 @@ const TempTable = ({ temps, range }) => {
 };
 
 const CapitalsTables = props => {
-  return (
-    <div className="capitalstable-container">
-      <div className="capitalstable-title">Capitais</div>
+  const isMobile = useMedia(["(max-width: 480px)"], [true], false);
 
-      <div className="capitalstable-tables">
-        <div className="tables-table-1">
+  return (
+    <div className="capitals-table__container">
+      <div className="capitals-table__title">Capitais</div>
+
+      <div className="capitals-table__tables">
+        <div className="capitals-table__left-table">
           <TempTable
             temps={props.cityTemps}
             range={isMobile ? [0, 10] : [0, 4]}
@@ -36,7 +37,7 @@ const CapitalsTables = props => {
         </div>
 
         {!isMobile && (
-          <div className="tables-table-2">
+          <div className="capitals-table__right-table">
             <TempTable
               temps={props.cityTemps}
               range={[5, 10]}

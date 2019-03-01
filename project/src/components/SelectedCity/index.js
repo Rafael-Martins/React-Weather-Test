@@ -31,16 +31,16 @@ const SelectedCity = props => {
   }C° ${city.current_observation.condition.text}`;
 
   return (
-    <div className="selectedcity-container">
-      <div className="selectedcity-head">
+    <div className="selectedcity__container">
+      <div className="selectedcity__head">
         {cityTitle}
-        <div className="close-button">
-          <span className="jam jam-close close-icon" onClick={props.close} />
+        <div className="close-button__container">
+          <span className="jam jam-close close-button" onClick={props.close} />
         </div>
       </div>
 
       <div className="selectedcity-body">
-        <div className="current-condition">{currentCondition}</div>
+        <div className="current-condition__container">{currentCondition}</div>
 
         <div className="thermal-sensation">
           <ThermalSensation city={city} />

@@ -29,9 +29,13 @@ const tenCityArray = [
 
 describe("Basic tests", () => {
   it("should render with empty array", () => {
+    global.innerWidth = 500;
+    global.dispatchEvent(new Event("resize"));
     const wrapper = shallow(<Index cityTemps={[]} />);
-    const tablesTable = wrapper.find(".tables-table-1 #temp-table");
-    const tablesTable2 = wrapper.find(".tables-table-2 #temp-table");
+    const tablesTable = wrapper.find(".capitals-table__left-table #temp-table");
+    const tablesTable2 = wrapper.find(
+      ".capitals-table__right-table #temp-table"
+    );
 
     expect(tablesTable.length).toBe(1);
     expect(tablesTable2.length).toBe(1);
@@ -39,8 +43,10 @@ describe("Basic tests", () => {
 
   it("should render with tenCityArray", () => {
     const wrapper = shallow(<Index cityTemps={tenCityArray} />);
-    const tablesTable = wrapper.find(".tables-table-1 #temp-table");
-    const tablesTable2 = wrapper.find(".tables-table-2 #temp-table");
+    const tablesTable = wrapper.find(".capitals-table__left-table #temp-table");
+    const tablesTable2 = wrapper.find(
+      ".capitals-table__right-table #temp-table"
+    );
 
     expect(tablesTable.length).toBe(1);
     expect(tablesTable2.length).toBe(1);

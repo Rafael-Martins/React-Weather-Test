@@ -11,7 +11,7 @@ const TermalSensation = props => {
 
   return (
     <div className="sensation-container">
-      <div className="sensation-line">
+      <div className="sensation__line">
         <div className="sensation-item">
           <span className="jam jam-arrow-down sensation-icon" />
           <span className="sensation-result">{lowTemp}°</span>
@@ -23,7 +23,7 @@ const TermalSensation = props => {
         </div>
       </div>
 
-      <div className="sensation-line">
+      <div className="sensation__line">
         <div className="sensation-item">
           Vento <span className="sensation-result">{windSpeed}km/h</span>
         </div>
