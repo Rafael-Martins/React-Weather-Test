@@ -64,24 +64,20 @@ class App extends Component {
         <div className="app__container">
           <div className="app-title">Previsão do tempo</div>
 
-          {this.state.selectedCity !== "" ? (
+          {this.state.selectedCity !== "" && (
             <div className="app-selectedcity__container">
               <SelectedCity
                 city={this.state.selectedCity}
                 close={this.closeCity}
               />
             </div>
-          ) : (
-            ""
           )}
 
           <div className="app-searchbox__container">
             <SearchBox goSearch={this.searchCity} />
             <div className="search-error__container">
-              {this.state.cityNotFound ? (
+              {this.state.cityNotFound && (
                 <span className="search-error">Cidade não encontrada</span>
-              ) : (
-                ""
               )}
             </div>
           </div>
